@@ -7,7 +7,3 @@
  */
 
 #include "battleship.h"
-
-int main(){
-    
-}
