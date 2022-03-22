@@ -36,7 +36,7 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 			if (history[i][j] != '-') firstMove = false;
 		}
 	}
-	do{
+	do {
 		if (firstMove){
 			srand(time(NULL));
 			// Random move
@@ -45,6 +45,27 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 		} else {
 			// Begin smart search
 			// Check what hits there are on the board, if any.
+			if (history[lastMove[0]][lastMove[1]] != 'm'){
+				// Check that last move is a hit.
+				switch (history[lastMove[0]][lastMove[1]]) {
+					case 'C' :
+					
+					case 'B' :
+					
+					case 'R' :
+					
+					case 'S' : 
+					
+					case 'D' :
+						if (history[lastMove[0] + 1][lastMove[1] + 1] == '-'){
+							thisMove[0] = lastMove[0] + 1;
+							thisMove[1] = lastMove[1] + 1;
+						} else if (1){
+						
+						}
+					default : break;
+				}
+			}
 			// If no hits on unsunk ships, then pick another random.
 			// If hit, check type of ship and try one of the spots next to it.
 			// If not hit, but not sunk, try other direction.
