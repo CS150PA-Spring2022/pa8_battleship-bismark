@@ -24,13 +24,40 @@ const string SHIP_NAMES[] = {"carrier", "battleship", "cruiser", "submarine", "d
 const char SHIP_SYMBOLS[] = {'c', 'b', 'r', 's', 'd'};
 const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
 
-//Boards
-
 // Declare functions
 void welcomeScreen();
 void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]);
 void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
+
+
+//Temporarily initialized boards for playtesting until proper setup is configured.
+const char p1board[NUM_ROWS][NUM_COLS] = {
+'-', '-', 'c', 'c', 'c', 'c', 'c', '-', '-', '-',
+'d', 'd', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', '-', '-', '-', '-', '-', '-', '-', '-', 's',
+'-', '-', '-', '-', 'b', '-', '-', '-', '-', 's',
+'-', '-', '-', '-', 'b', '-', '-', '-', '-', 's',
+'-', '-', '-', '-', 'b', '-', '-', '-', '-', '-',
+'-', '-', '-', '-', 'b', '-', '-', '-', '-', '-',
+'-', '-', '-', 'r', 'r', 'r', '-', '-', '-', '-',
+'-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
+}
+
+const char p2board[NUM_ROWS][NUM_COLS] = {
+'-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
+'d', 'd', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', '-', '-', '-', '-', '-', 's', 's', 's', '-',
+'-', 'r', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', 'r', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', 'r', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', 'r', '-', '-', '-', '-', 'b', 'b', 'b', 'b',
+'-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
+'-', '-', '-', 'c', 'c', 'c', 'c', 'c', '-', '-',
+'-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
+}
+
 
 #endif
