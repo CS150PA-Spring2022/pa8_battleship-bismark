@@ -14,6 +14,8 @@
 #include <cstdlib>
 using namespace std;
 
+#define TESTING
+
 // Global variables and arrays useful in the program
 const int NUM_ROWS = 10;  // number of rows of the battleship game board
 const int NUM_COLS = 10;  // number of columns of the battleship game board
@@ -31,7 +33,7 @@ void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
 
-
+#ifdef TESTING
 //Temporarily initialized boards for playtesting until proper setup is configured.
 const char p1board[NUM_ROWS][NUM_COLS] = {
 '-', '-', 'c', 'c', 'c', 'c', 'c', '-', '-', '-',
@@ -44,7 +46,7 @@ const char p1board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', 'r', 'r', 'r', '-', '-', '-', '-',
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
-}
+};
 
 const char p2board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
@@ -57,7 +59,7 @@ const char p2board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
 '-', '-', '-', 'c', 'c', 'c', 'c', 'c', '-', '-',
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
-}
-
+};
+#endif
 
 #endif

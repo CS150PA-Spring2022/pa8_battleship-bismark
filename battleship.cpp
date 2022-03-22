@@ -70,6 +70,6 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 			// If hit, check type of ship and try one of the spots next to it.
 			// If not hit, but not sunk, try other direction.
 		}
-	} while (/* Check if valid move*/);
+	} while (/* Check if valid move*/ 1);
 	// Output move
 }
