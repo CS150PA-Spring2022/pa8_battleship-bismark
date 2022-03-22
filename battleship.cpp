@@ -36,10 +36,19 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 			if (history[i][j] != '-') firstMove = false;
 		}
 	}
-	if (firstMove){
-		// Random move
-	} else {
-		// Begin smart search
-	}
+	do{
+		if (firstMove){
+			srand(time(NULL));
+			// Random move
+			thisMove[0] = rand() % NUM_ROWS; // Random row
+			thisMove[1] = rand() % NUM_COLS; // Random column
+		} else {
+			// Begin smart search
+			// Check what hits there are on the board, if any.
+			// If no hits on unsunk ships, then pick another random.
+			// If hit, check type of ship and try one of the spots next to it.
+			// If not hit, but not sunk, try other direction.
+		}
+	} while (/* Check if valid move*/);
 	// Output move
 }
