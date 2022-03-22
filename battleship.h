@@ -10,6 +10,8 @@
 #define BATTLESHIP_H
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 // Global variables and arrays useful in the program
@@ -21,5 +23,9 @@ const int NUM_SHIPS = 5;  // number of ships in the battelship game
 const string SHIP_NAMES[] = {"carrier", "battleship", "cruiser", "submarine", "destroyer"};
 const char SHIP_SYMBOLS[] = {'c', 'b', 'r', 's', 'd'};
 const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
+
+// Declare functions
+void welcomeScreen();
+void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]);
 
 #endif

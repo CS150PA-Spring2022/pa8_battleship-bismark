@@ -9,6 +9,12 @@
 #include "battleship.h"
 
 int main(){
-    
+	welcomeScreen();
+    // Initialize boards
+    	// Extra board for computer to keep track of shots? Will update as needed... 
+    	// Most likely needed. Not necessary segment, will call if needed.
+    // Place ships
+    // Begin game
+    // Game loop
     return 0;
 }
