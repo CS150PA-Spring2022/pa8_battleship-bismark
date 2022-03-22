@@ -28,7 +28,7 @@ const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
 
 // Declare functions
 void welcomeScreen();
-void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]);
+void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips);
 void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);

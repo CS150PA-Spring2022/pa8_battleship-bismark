@@ -29,7 +29,7 @@ void welcomeScreen(){
  * @param lastMove		  Stores the last move to allow for smarter play
  * @param history		  Stores the move statistics of the computer for smarter play
  */
-void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
+void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips[]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
 	bool firstMove = true;
 	for (int i = 0; i < NUM_COLS; i++){
 		for (int j = 0; j < NUM_ROWS; j++){
@@ -44,10 +44,37 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 			thisMove[1] = rand() % NUM_COLS; // Random column
 		} else {
 			// Begin smart search
-			// Check what hits there are on the board, if any.
-			if (history[lastMove[0]][lastMove[1]] != 'm'){
-				// Check that last move is a hit.
-				switch (history[lastMove[0]][lastMove[1]]) {
+			if (history[lastMove[0]][lastMove[1]] != 'm'){ // Check that last move is a hit.
+				char lastResult = history[lastMove[0]][lastMove[1]];
+				if (lastResult == 'C'){
+					if (liveShips[0]){ // Check if it is still up.
+						if (history[lastMove[0] - 1][lastMove[1]] == 'C'){
+							// Check if ship went to previous row.
+							if (history[lastMove[0] + 1][lastMove[1]] == 'C'){
+								// NOTE: THIS CODE IS NOT FINAL. IT WILL UNDERGO MORE REWRITES!
+								// Currently awaiting display framework.
+							}
+						}
+					}
+				} else if (lastResult == 'B'){
+					if (liveShips[1]){
+					
+					}
+				} else if (lastResult == 'R'){
+					if (liveShips[2]){
+					
+					}
+				} else if (lastResult == 'S'){
+					if (liveShips[3]){
+					
+					}
+				} else if (lastResult == 'D'){
+					if (liveShips[4]){
+					
+					}
+				}
+				// If hit, check type of ship and try one of the spots next to it.
+				/*switch (lastResult) {
 					case 'C' :
 					
 					case 'B' :
@@ -55,19 +82,24 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 					case 'R' :
 					
 					case 'S' : 
-					
-					case 'D' :
-						if (history[lastMove[0] + 1][lastMove[1] + 1] == '-'){
-							thisMove[0] = lastMove[0] + 1;
-							thisMove[1] = lastMove[1] + 1;
-						} else if (1){
 						
+					case 'D' :
+						if (history[lastMove[0]][lastMove[1] + 1] == '-'){ // Next column
+							thisMove[0] = lastMove[0];
+							thisMove[1] = lastMove[1] + 1;
+						} else if (history[lastMove[0]][lastMove[1] - 1] == '-'){ // Last column
+							thisMove[0] = lastMove[0];
+							thisMove[1] = lastMove[1] - 1;
+						} else if (history[lastMove[0] + 1][lastMove[1]] == '-'){ // Next row
+							thisMove[0] = lastMove[0] + 1;
+							thisMove[1] = lastMove[1];
+						} else if (history[lastMove[0] - 1][lastMove[1]] == '-'){ // Last row
+							
 						}
 					default : break;
-				}
+				}*/
 			}
 			// If no hits on unsunk ships, then pick another random.
-			// If hit, check type of ship and try one of the spots next to it.
 			// If not hit, but not sunk, try other direction.
 		}
 	} while (/* Check if valid move*/ 1);
