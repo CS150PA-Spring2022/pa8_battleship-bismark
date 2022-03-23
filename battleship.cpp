@@ -29,7 +29,7 @@ void welcomeScreen(){
  * @param lastMove		  Stores the last move to allow for smarter play
  * @param history		  Stores the move statistics of the computer for smarter play
  */
-void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips[]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
+void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips[], int lastHit[]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
 	bool firstMove = true;
 	for (int i = 0; i < NUM_COLS; i++){
 		for (int j = 0; j < NUM_ROWS; j++){
@@ -87,4 +87,49 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool
 		}
 	} while (/* Check if valid move*/ 1);
 	// Output move
+}
+
+void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], int lastHit[], char target){
+	char lastHitShip = history[lastHit[0]][lastHit[1]];
+	thisMove = {-1,-1};
+	// Bring neighbors out of array.
+	char nextRow = history[lastHit[0] + 1][lastHit[1]];
+	char lastRow = history[lastHit[0] - 1][lastHit[1]];
+	char nextCol = history[lastHit[0]][lastHit[1] + 1];
+	char lastCol = history[lastHit[0]][lastHit[1] - 1];
+	
+	bool tried[4];
+	// Check which surroundings are set and store to bool.
+	if (lastRow == '-') tried[0] = false;
+	else if (lastRow == lastHitShip) thisMove = {lastHit[0] + 1, lastHit[1]};
+	if (nextCol == '-') tried[1] = false;
+	else if (nextCol == lastHitShip) thisMove = {lastHit[0], lastHit[1] - 1};
+	if (nextRow == '-') tried[2] = false;
+	else if (nextRow == lastHitShip) thisMove = {lastHit[0] - 1, lastHit[1]};
+	if (lastCol == '-') tried[3] = false;
+	else if (lastCol == lastHitShip) thisMove = {lastHit[0], lastHit[1] + 1};
+	
+	// If move found, try again.
+	if (thisMove[0] != -1 && thisMove[1] != -1) return;
+	
+	//ADD CODE TO CHECK FOR LINE.
+	/*switch (lastHit) {
+		case 'c' :
+			// Check if any neighboring.
+			if (history[lastHit[0] + 1][lastHit[1]] == 'c' || history[lastMove[0] - 1][lastMove[1]] == 'c' || history[lastMove[0]][lastMove[1] + 1] == 'c' || history[lastMove[0]][lastMove[1] -1]){
+				// Check which one it is at.
+			} else {
+				// If none, check which ones already tried, then try next one going CW.
+				
+			}
+		case 'b' :
+			
+		case 'r' :
+			
+		case 's' :
+			
+		case 'd' :
+			
+		default : break;
+	}*/
 }
