@@ -48,11 +48,19 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool
 				char lastResult = history[lastMove[0]][lastMove[1]];
 				if (lastResult == 'C'){
 					if (liveShips[0]){ // Check if it is still up.
-						if (history[lastMove[0] - 1][lastMove[1]] == 'C'){
-							// Check if ship went to previous row.
-							if (history[lastMove[0] + 1][lastMove[1]] == 'C'){
-								// NOTE: THIS CODE IS NOT FINAL. IT WILL UNDERGO MORE REWRITES!
-								// Currently awaiting display framework.
+						if (history[lastMove[0] - 1][lastMove[1]] == 'C'){ // Check if it is in previous row.
+							for (int i = 2; i < SHIP_SIZES[0]; i++){
+								if (history[lastMove[0] - i][lastMove[1]] == '-'){
+									thisMove[0] = lastMove[0] - i;
+									thisMove[1] = lastMove[1];
+								}
+							}
+						} else if (history[lastMove[0] + 1][lastMove[1]] == 'C'){ // Check if it is in the next row.
+							for (int i = 2; i < SHIP_SIZES[0]; i++){
+								if (history[lastMove[0] + i][lastMove[1]] == '-'){
+									thisMove[0] = lastMove[0] + i;
+									thisMove[1] = lastMove[1];
+								}
 							}
 						}
 					}
@@ -73,31 +81,6 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool
 					
 					}
 				}
-				// If hit, check type of ship and try one of the spots next to it.
-				/*switch (lastResult) {
-					case 'C' :
-					
-					case 'B' :
-					
-					case 'R' :
-					
-					case 'S' : 
-						
-					case 'D' :
-						if (history[lastMove[0]][lastMove[1] + 1] == '-'){ // Next column
-							thisMove[0] = lastMove[0];
-							thisMove[1] = lastMove[1] + 1;
-						} else if (history[lastMove[0]][lastMove[1] - 1] == '-'){ // Last column
-							thisMove[0] = lastMove[0];
-							thisMove[1] = lastMove[1] - 1;
-						} else if (history[lastMove[0] + 1][lastMove[1]] == '-'){ // Next row
-							thisMove[0] = lastMove[0] + 1;
-							thisMove[1] = lastMove[1];
-						} else if (history[lastMove[0] - 1][lastMove[1]] == '-'){ // Last row
-							
-						}
-					default : break;
-				}*/
 			}
 			// If no hits on unsunk ships, then pick another random.
 			// If not hit, but not sunk, try other direction.
