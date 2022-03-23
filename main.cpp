@@ -16,5 +16,11 @@ int main(){
     // Place ships
     // Begin game
     // Game loop
+    for (int i = 0; i < NUM_ROWS; i++){
+    	for (int j = 0; j < NUM_COLS; j++){
+    		cout << p1board[i][j];
+    	}
+    	cout << endl;
+    }
     return 0;
 }
