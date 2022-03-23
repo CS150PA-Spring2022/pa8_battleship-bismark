@@ -12,6 +12,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <string>
 using namespace std;
 
 // Global variables and arrays useful in the program
@@ -22,7 +23,7 @@ const int NUM_SHIPS = 5;  // number of ships in the battelship game
 // Each of the ships information in 3 arrays (parallel arrays)
 const string SHIP_NAMES[] = {"carrier", "battleship", "cruiser", "submarine", "destroyer"};
 const char SHIP_SYMBOLS[] = {'c', 'b', 'r', 's', 'd'};
-const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
+const int SHIP_SIZES[] = {5, 4, 3, 3, 2,};
 
 // Declare functions
 void welcomeScreen();
@@ -44,7 +45,7 @@ const char p1board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', 'r', 'r', 'r', '-', '-', '-', '-',
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
-}
+};
 
 const char p2board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
@@ -57,7 +58,7 @@ const char p2board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-',
 '-', '-', '-', 'c', 'c', 'c', 'c', 'c', '-', '-',
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
-}
+};
 
 
 #endif
