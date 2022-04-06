@@ -73,3 +73,11 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 	} while (/* Check if valid move*/ 1);
 	// Output move
 }
+
+bool checkYN(char input){
+	if (input == 'Y' || input == 'y'){
+		return true;
+	} else {
+		return false;
+	}
+}
