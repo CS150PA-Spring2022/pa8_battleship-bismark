@@ -29,7 +29,67 @@ void welcomeScreen(){
  * @param lastMove		  Stores the last move to allow for smarter play
  * @param history		  Stores the move statistics of the computer for smarter play
  */
-void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips[], int lastHit[]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
+ 
+void computerMove(int thisMove[], int lastMove[], int lastHit[], char history[][NUM_COLS], bool liveShips[]){
+	/*bool firstMove = true;
+	// Check if previous move.
+	for (int i = 0; i < NUM_COLS; i++){
+		for (int j = 0; j < NUM_ROWS; j++){
+			if (history[i][j] != '-') firstMove = false;
+		}
+	}
+	do {
+		if (firstMove){
+			srand(time(NULL));
+			// Random move
+			thisMove[0] = rand() % NUM_ROWS; // Random row
+			thisMove[1] = rand() % NUM_COLS; // Random column
+		} else {
+			if (history[lastMove[0]][lastMove[1]] == 'm'){
+				srand(time(NULL));
+				// Random move
+				thisMove[0] = rand() % NUM_ROWS; // Random row
+				thisMove[1] = rand() % NUM_COLS; // Random column
+			} else {
+				char lastResult = history[lastMove[0]][lastMove[1]];
+				int index = 0;
+				for (index = 0; index < NUM_SHIPS; index++){
+					if (lastResult == SHIP_SYMBOLS[index]) break;
+				}
+				if (!liveShips[index]){
+					srand(time(NULL));
+					// Random move
+					thisMove[0] = rand() % NUM_ROWS; // Random row
+					thisMove[1] = rand() % NUM_COLS; // Random column
+				} else {
+					switch (index) {
+						case 0 : // Carrier
+							int hits[5][2];
+							int hitIndex = 0;
+							for (int i = 0; i < NUM_COLS; i++){
+								for (int j = 0; j < NUM_ROWS; j++){
+									if (history[i][j] == SHIP_SYMBOLS[index]){
+										hits
+									}
+								}
+							}
+						case 1 : // Battleship
+							
+						case 2 : // Cruiser
+							
+						case 3 : // Submarine
+							
+						case 4 : // Destroyer
+							
+						default : break;
+					}
+				}
+			}
+		}
+	} while (1);
+	*/
+}
+/*void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips[], int lastHit[]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
 	bool firstMove = true;
 	for (int i = 0; i < NUM_COLS; i++){
 		for (int j = 0; j < NUM_ROWS; j++){
@@ -85,9 +145,9 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool
 			// If no hits on unsunk ships, then pick another random.
 			// If not hit, but not sunk, try other direction.
 		}
-	} while (/* Check if valid move*/ 1);
+	} while ( Check if valid move 1);
 	// Output move
-}
+}*/
 
 void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], int lastHit[], char target){
 	char lastHitShip = history[lastHit[0]][lastHit[1]];
