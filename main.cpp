@@ -27,7 +27,7 @@ int main(){
     if (checkYN(randPlace)){
     	// Random placement
     } else {
-    	manualPlace(p1board);
+    	manualplace(p1board);
     }
     for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){
@@ -35,5 +35,26 @@ int main(){
     	}
     	cout << endl;
     }
+
+    char yesno =' ';
+
+
+     do {
+        cout<<"Would you like to play a game of Battleship?";
+        cout<<"type 'y' if yes, 'n' if no ";
+        cin>>yesno;
+        
+        if(yesno=='y')
+        {
+            cout<<"Game in progress";
+        }
+
+    }while(yesno =='y');
+
+     cout<<"goodbye";
+
+
+
+
     return 0;
 }
