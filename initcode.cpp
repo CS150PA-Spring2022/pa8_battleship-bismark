@@ -38,13 +38,11 @@ void displayboard(char board[][NUM_COLS]){
 		cout << head + 1 << " ";
 	}
 	cout << endl;
+	char rowchar;
 	for (int row = 0; row < NUM_ROWS; row++)
 	{
-		if (row < 9){
-		cout <<' '<<row + 1<<" ";
-		} else {
-			cout <<row + 1<<" ";
-		}
+		rowchar = 'A' + row;
+		cout <<rowchar<<" ";
 		for (int col = 0; col < NUM_COLS; col++)
 		{
 			cout << board[row][col] << ' ';
@@ -58,7 +56,8 @@ void displayboard(char board[][NUM_COLS]){
  * @param Board which board to place ships on
  **/
 void manualplace(char board[][NUM_COLS]){
-	int placeX = 0, placeY = 0, placeR = 0;
+	int placeX = 0,placeY, placeR = 0;
+	char placeXchar;
     bool valid;
 	for (int shipnum = 0; shipnum < NUM_SHIPS; shipnum++)
 	{
@@ -68,11 +67,11 @@ void manualplace(char board[][NUM_COLS]){
             displayboard(board);
 	    	//Asks user for coordinates for ship
             do {
-	        	cout << "Input Coordinates to begin placing "<<SHIP_NAMES[shipnum]<<" with length of "<<SHIP_SIZES[shipnum]<<", seperated by a space: [COLUMN, ROW]\n";
-	        	cin >> placeY; //gets X coord (rows)
+	        	cout << "Input Coordinates to begin placing "<<SHIP_NAMES[shipnum]<<" with length of "<<SHIP_SIZES[shipnum]<<", seperated by a space: [ROW,COLUMN]\n";
+				cin >> placeXchar; //gets x coord (row)
+				placeX = placeXchar - 65;
+				cin >> placeY; //gets Y coord (col)
 				placeY = placeY - 1;
-	        	cin >> placeX; //gets Y coord (col)
-				placeX = placeX - 1;
             } while ((placeX < 0 || placeX > NUM_ROWS) || (placeY < 0 || placeY > NUM_ROWS));
 
 			do {
@@ -136,7 +135,11 @@ void manualplace(char board[][NUM_COLS]){
 	displayboard(board);
 
 }
-
+/**
+ * @brief Generates a Random Board
+ *
+ * @param Board which board to generate
+ **/
 void autoplace(char board[][NUM_COLS]) {
 		int placeX = 0, placeY = 0, placeR = 0;
     bool valid;
