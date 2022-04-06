@@ -5,7 +5,6 @@
  * @date   03-21-2022
  * 
  */
-
 #ifndef BATTLESHIP_H
 #define BATTLESHIP_H
 
@@ -35,9 +34,14 @@ void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
 bool checkYN(char input);
 void autoplace(char board[][NUM_COLS]);
+bool isSunk(char board[][NUM_COLS], char ship);
+
+
+
 bool validShot(int row,int col,char board[][NUM_COLS]);
 bool hitDetect(int row,int col,char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]);
+
 #ifdef TESTING
 //Temporarily initialized boards for playtesting until proper setup is configured.
 const char p1board[NUM_ROWS][NUM_COLS] = {
@@ -67,4 +71,3 @@ const char p2board[NUM_ROWS][NUM_COLS] = {
 };
 #endif
 #endif
-
