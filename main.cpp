@@ -24,10 +24,10 @@ int main(){
     char randPlace = 'y';
     
     // Ask if want random or manual placement.
-    if (checkYN(randPlace)){
+    if (checkYN(randPlace)==0){
     	// Random placement
     } else {
-    	manualPlace(p1board);
+    	manualplace(p1board);
     }
     for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){
