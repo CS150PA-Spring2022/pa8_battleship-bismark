@@ -66,4 +66,5 @@ const char p2board[NUM_ROWS][NUM_COLS] = {
 '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'
 };
 #endif
+#endif
 
