@@ -25,10 +25,11 @@ int main(){
     
     // Ask if want random or manual placement.
     if (checkYN(randPlace)){
-    	// Random placement
+    	autoplace(p1board);
     } else {
     	manualplace(p1board);
     }
+    autoplace(p2board);
     for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){
     		cout << p1board[i][j];

@@ -21,6 +21,27 @@ void welcomeScreen(){
 	cout << "Hit enter to start the game!\n";
 }
 
+/**
+ * @brief Checks if ships are sunk
+ *
+ * @param board		 	  Holds board for checking
+ * @param ship		  	  Defines ship to check for
+ */
+bool isSunk(char board[][NUM_COLS], char ship){
+	int index = 0;
+	for (index = 0; index < NUM_SHIPS; index++){
+		if (ship == SHIP_SYMBOLS[index]) break;
+		else index++;
+	}
+	int numHits = 0;
+	for (int i = 0; i < NUM_COLS; i++){
+		for (int j = 0; j < NUM_ROWS; j++){
+			if (ship == board[i][j]) numHits++;
+		}
+	}
+	if (numHits == SHIP_SIZES[index]) return true;
+	else return false;
+}
 
 /**
  * @brief Handles computer player moves
@@ -72,6 +93,33 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 		}
 	} while (/* Check if valid move*/ 1);
 	// Output move
+}
+
+/**
+ * @brief Displays a board to the terminal
+ *
+ * @param Board which board to display
+ **/
+void displayboard(char board[][NUM_COLS]){
+	cout <<"   ";
+	for (int head = 0; head < NUM_COLS; head++)
+	{
+		cout << head + 1 << " ";
+	}
+	cout << endl;
+	for (int row = 0; row < NUM_ROWS; row++)
+	{
+		if (row < 9){
+		cout <<' '<<row + 1<<" ";
+		} else {
+			cout <<row + 1<<" ";
+		}
+		for (int col = 0; col < NUM_COLS; col++)
+		{
+			cout << board[row][col] << ' ';
+		}
+	cout << endl;
+	}	
 }
 
 bool checkYN(char input){
