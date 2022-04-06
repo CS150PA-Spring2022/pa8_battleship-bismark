@@ -48,15 +48,15 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 			if (history[lastMove[0]][lastMove[1]] != 'm'){
 				// Check that last move is a hit.
 				switch (history[lastMove[0]][lastMove[1]]) {
-					case 'C' :
+					case 'C' :     //'C' represents a carrier 5 spaces 
 					
-					case 'B' :
+					case 'B' :   // B represents a battleship  4 spaces 
 					
-					case 'R' :
+					case 'R' : //R represents a recon boat 3 space
 					
-					case 'S' : 
+					case 'S' :    // S  represnts a submarine 3 spaces 
 					
-					case 'D' :
+					case 'D' :    // D represnts a destroyer 2 spaces 
 						if (history[lastMove[0] + 1][lastMove[1] + 1] == '-'){
 							thisMove[0] = lastMove[0] + 1;
 							thisMove[1] = lastMove[1] + 1;
