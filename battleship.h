@@ -14,7 +14,7 @@
 #include <cstdlib>
 using namespace std;
 
-#define TESTING
+//#define TESTING
 
 // Global variables and arrays useful in the program
 const int NUM_ROWS = 10;  // number of rows of the battleship game board
@@ -33,6 +33,7 @@ void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], 
 void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
+bool checkYN(char input);
 void autoplace(char board[][NUM_COLS]);
 
 #ifdef TESTING
