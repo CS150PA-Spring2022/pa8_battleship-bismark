@@ -34,9 +34,11 @@ void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
 bool checkYN(char input);
+void autoplace(char board[][NUM_COLS]);
 bool validShot(int row,int col,char board[][NUM_COLS]);
 bool hitDetect(int row,int col,char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]);
+#ifdef TESTING
 //Temporarily initialized boards for playtesting until proper setup is configured.
 const char p1board[NUM_ROWS][NUM_COLS] = {
 '-', '-', 'c', 'c', 'c', 'c', 'c', '-', '-', '-',
