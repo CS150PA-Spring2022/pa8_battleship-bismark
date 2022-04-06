@@ -89,6 +89,7 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool
 	// Output move
 }
 
+<<<<<<< HEAD
 void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], int lastHit[], char target){
 	char lastHitShip = history[lastHit[0]][lastHit[1]];
 	thisMove = {-1,-1};
@@ -132,4 +133,12 @@ void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], 
 			
 		default : break;
 	}*/
+=======
+bool checkYN(char input){
+	if (input == 'Y' || input == 'y'){
+		return true;
+	} else {
+		return false;
+	}
+>>>>>>> main
 }
