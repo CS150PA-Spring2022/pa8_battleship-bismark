@@ -136,3 +136,74 @@ void manualplace(char board[][NUM_COLS]){
 	displayboard(board);
 
 }
+
+void autoplace(char board[][NUM_COLS]) {
+		int placeX = 0, placeY = 0, placeR = 0;
+    bool valid;
+		cout << "Generating Ship Placement...\n";
+				srand(time(NULL));
+	for (int shipnum = 0; shipnum < NUM_SHIPS; shipnum++)
+	{
+		do {
+
+            valid = true;
+	    	//Asks user for coordinates for ship
+            do {
+				placeY = (rand() % 9);
+	        	placeX = (rand() % 9);
+            } while ((placeX < 0 || placeX > NUM_ROWS) || (placeY < 0 || placeY > NUM_ROWS));
+
+			do {
+				placeR = (rand() % 2);
+	        	if (placeR != 0 && placeR != 1) {
+		        }
+		    } while (placeR != 0 && placeR != 1);
+            //INPUT VALIDATION
+
+            //Check if too close to walls
+		    if (placeR == 0 && placeX - SHIP_SIZES[shipnum] < -1){
+                valid = false;
+            }
+            if (placeR == 1 && placeY + SHIP_SIZES[shipnum] > 9){
+                valid = false;
+            }
+            //check if overlapping other ship
+            if (placeR == 1){
+                for (int i = 0; i < SHIP_SIZES[shipnum]; i++){
+                    if (board[placeX][placeY + i] != '-'){
+                        valid = false;
+                        break;
+                    }
+                }
+            }
+            if (placeR == 0){
+                for (int i = 0; i < SHIP_SIZES[shipnum]; i++)
+                {
+                    if(board[placeX - i][placeY] != '-'){
+                        valid = false;
+                        break;
+                    }
+                }
+                
+            }
+		} while (valid == false);
+		//draw the ships
+		if(placeR == 0){
+			for (int rows = 0; rows < SHIP_SIZES[shipnum]; rows++)
+			{
+				board[(placeX - rows)][placeY] = SHIP_SYMBOLS[shipnum];
+			}
+		}else if (placeR == 1) {
+			for (int col = 0; col < SHIP_SIZES[shipnum]; col++)
+			{
+				board[placeX][(placeY + col)] = SHIP_SYMBOLS[shipnum];
+			}
+			
+		}
+		
+	}
+	cout << "Auto Initialization Complete.\n";
+	cout << "This is the Board:\n";
+	displayboard(board);
+
+}

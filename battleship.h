@@ -33,6 +33,7 @@ void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], 
 void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
+void autoplace(char board[][NUM_COLS]);
 
 #ifdef TESTING
 //Temporarily initialized boards for playtesting until proper setup is configured.
