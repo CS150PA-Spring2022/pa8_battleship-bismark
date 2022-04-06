@@ -27,32 +27,6 @@ void buildboard(char board[][NUM_COLS]){
 }
 
 /**
- * @brief Displays a board to the terminal
- *
- * @param Board which board to display
- **/
-void displayboard(char board[][NUM_COLS]){
-	cout <<"   ";
-	for (int head = 0; head < NUM_COLS; head++)
-	{
-		cout << head + 1 << " ";
-	}
-	cout << endl;
-	for (int row = 0; row < NUM_ROWS; row++)
-	{
-		if (row < 9){
-		cout <<' '<<row + 1<<" ";
-		} else {
-			cout <<row + 1<<" ";
-		}
-		for (int col = 0; col < NUM_COLS; col++)
-		{
-			cout << board[row][col] << ' ';
-		}
-	cout << endl;
-	}	
-}
-/**
  * @brief Enters the Manual Placement sequence for ships
  *
  * @param Board which board to place ships on

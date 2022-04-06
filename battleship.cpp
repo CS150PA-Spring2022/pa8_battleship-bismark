@@ -74,6 +74,33 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
 	// Output move
 }
 
+/**
+ * @brief Displays a board to the terminal
+ *
+ * @param Board which board to display
+ **/
+void displayboard(char board[][NUM_COLS]){
+	cout <<"   ";
+	for (int head = 0; head < NUM_COLS; head++)
+	{
+		cout << head + 1 << " ";
+	}
+	cout << endl;
+	for (int row = 0; row < NUM_ROWS; row++)
+	{
+		if (row < 9){
+		cout <<' '<<row + 1<<" ";
+		} else {
+			cout <<row + 1<<" ";
+		}
+		for (int col = 0; col < NUM_COLS; col++)
+		{
+			cout << board[row][col] << ' ';
+		}
+	cout << endl;
+	}	
+}
+
 bool checkYN(char input){
 	if (input == 'Y' || input == 'y'){
 		return true;
