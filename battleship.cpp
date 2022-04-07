@@ -21,6 +21,7 @@ void welcomeScreen(){
 	cout << "Hit enter to start the game!\n";
 }
 
+// Kellen
 /**
  * @brief Checks if ships are sunk
  *
@@ -43,85 +44,37 @@ bool isSunk(char board[][NUM_COLS], char ship){
 	else return false;
 }
 
-/**
- * @brief Handles computer player moves
- *
- * @param thisMove		  Holds the current move by the computer
- * @param lastMove		  Stores the last move to allow for smarter play
- * @param history		  Stores the move statistics of the computer for smarter play
- */
-void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // NOTE: THIS FUNCTION IS IN ROUGH STAGES. PARAMETERS ARE NOT FIXED!
-	bool firstMove = true;
-	for (int i = 0; i < NUM_COLS; i++){
-		for (int j = 0; j < NUM_ROWS; j++){
-			if (history[i][j] != '-') firstMove = false;
-		}
-	}
-	do {
-		if (firstMove){
-			srand(time(NULL));
-			// Random move
-			thisMove[0] = rand() % NUM_ROWS; // Random row
-			thisMove[1] = rand() % NUM_COLS; // Random column
-		} else {
-			// Begin smart search
-			// Check what hits there are on the board, if any.
-			if (history[lastMove[0]][lastMove[1]] != 'm'){
-				// Check that last move is a hit.
-				switch (history[lastMove[0]][lastMove[1]]) {
-					case 'C' :
-					
-					case 'B' :
-					
-					case 'R' :
-					
-					case 'S' : 
-					
-					case 'D' :
-						if (history[lastMove[0] + 1][lastMove[1] + 1] == '-'){
-							thisMove[0] = lastMove[0] + 1;
-							thisMove[1] = lastMove[1] + 1;
-						} else if (1){
-						
-						}
-					default : break;
-				}
-			}
-			// If no hits on unsunk ships, then pick another random.
-			// If hit, check type of ship and try one of the spots next to it.
-			// If not hit, but not sunk, try other direction.
-		}
-	} while (/* Check if valid move*/ 1);
-	// Output move
-}
-
+// Carson?
 /**
  * @brief Displays a board to the terminal
  *
- * @param Board which board to display
+ * @param board 		  which board to display
  **/
 void displayboard(char board[][NUM_COLS]){
-	cout <<"   ";
-	for (int head = 0; head < NUM_COLS; head++)
-	{
+	cout << "   ";
+	for (int head = 0; head < NUM_COLS; head++){
 		cout << head + 1 << " ";
 	}
 	cout << endl;
-	for (int row = 0; row < NUM_ROWS; row++)
-	{
+	for (int row = 0; row < NUM_ROWS; row++){
 		if (row < 9){
-		cout <<' '<<row + 1<<" ";
+		cout << " " << row + 1 << " ";
 		} else {
-			cout <<row + 1<<" ";
+			cout << row + 1 << " ";
 		}
-		for (int col = 0; col < NUM_COLS; col++)
-		{
+		for (int col = 0; col < NUM_COLS; col++){
 			cout << board[row][col] << ' ';
 		}
 	cout << endl;
 	}	
 }
 
+// Kellen
+/**
+ * @brief Converts yes and no to bool
+ *
+ * @param 				  input which board to display
+ **/
 bool checkYN(char input){
 	if (input == 'Y' || input == 'y'){
 		return true;

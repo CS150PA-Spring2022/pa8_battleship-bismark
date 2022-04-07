@@ -35,9 +35,6 @@ void manualplace(char board[][NUM_COLS]);
 bool checkYN(char input);
 void autoplace(char board[][NUM_COLS]);
 bool isSunk(char board[][NUM_COLS], char ship);
-
-
-
 bool validShot(int row,int col,char board[][NUM_COLS]);
 bool hitDetect(int row,int col,char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]);
