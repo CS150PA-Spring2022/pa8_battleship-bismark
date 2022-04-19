@@ -100,6 +100,8 @@ void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS]){ // 
  *
  * @param Board which board to display
  **/
+
+/*
 void displayboard(char board[][NUM_COLS]){
 	cout <<"   ";
 	for (int head = 0; head < NUM_COLS; head++)
@@ -121,6 +123,7 @@ void displayboard(char board[][NUM_COLS]){
 	cout << endl;
 	}	
 }
+*/
 
 bool checkYN(char input){
 	if (input == 'Y' || input == 'y'){
