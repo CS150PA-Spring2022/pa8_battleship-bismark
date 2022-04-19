@@ -130,8 +130,9 @@ void autoplace(char board[][NUM_COLS]) {
 	int placeX = 0, placeY = 0, placeR = 0;
 	bool valid;
 	cout << "Generating Ship Placement...\n";
-	srand(time(NULL));
+	//srand(time(NULL));
 	for (int shipnum = 0; shipnum < NUM_SHIPS; shipnum++){
+		srand(time(NULL));
 		do {
 			valid = true;
 			//Asks user for coordinates for ship

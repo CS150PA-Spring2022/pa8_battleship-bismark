@@ -45,12 +45,13 @@ bool isSunk(char board[][NUM_COLS], char ship){
 }
 
 // Carson?
+// Unknown function? Also declared in initcode.cpp
 /**
  * @brief Displays a board to the terminal
  *
  * @param board 		  which board to display
  **/
-void displayboard(char board[][NUM_COLS]){
+/*void displayboard(char board[][NUM_COLS]){
 	cout << "   ";
 	for (int head = 0; head < NUM_COLS; head++){
 		cout << head + 1 << " ";
@@ -67,7 +68,7 @@ void displayboard(char board[][NUM_COLS]){
 		}
 	cout << endl;
 	}	
-}
+}*/
 
 // Kellen
 /**

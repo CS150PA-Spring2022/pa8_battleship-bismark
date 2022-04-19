@@ -10,6 +10,7 @@
 
 int main(){
 	welcomeScreen();
+	cin.get();
     // Initialize boards
     	// Extra board for computer to keep track of shots? Will update as needed... 
     	// Most likely needed. Not necessary segment, will call if needed.
@@ -21,20 +22,24 @@ int main(){
     buildboard(p1board);
     buildboard(p2board);
     
-    char randPlace = 'y';
-    
+    char randPlace = '\0';
+    cout << "Would you like to have your ships placed randomly? ";
+    cin >> randPlace;
     // Ask if want random or manual placement.
     if (checkYN(randPlace)){
     	autoplace(p1board);
+    	displayboard(p1board);
     } else {
     	manualplace(p1board);
     }
+    sleep(1);
     autoplace(p2board);
-    for (int i = 0; i < NUM_ROWS; i++){
+    // Unnecessary code?
+    /*for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){
     		cout << p1board[i][j];
     	}
     	cout << endl;
-    }
+    }*/
     return 0;
 }
