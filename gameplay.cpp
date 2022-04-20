@@ -45,6 +45,13 @@ void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS], Logger &logFile)
    }
 }
 
+// Lance
+/**
+ * @brief              Checks to see if a player has won
+ *
+ * @param board		 	  the board this function is checkign for a winner
+ */
+
 bool isWin(char board[][NUM_COLS])
 {
     int score=0;

@@ -21,9 +21,11 @@ int main(){
     char p1board[NUM_ROWS][NUM_COLS];
     char p2board[NUM_ROWS][NUM_COLS];
     char hitMap[NUM_ROWS][NUM_COLS];
+    char hitMap2[NUM_ROWS][NUM_COLS];
     buildboard(p1board);
     buildboard(p2board);
     buildboard(hitMap);
+    buildboard(hitMap2);
 
     //creates log after boards initialized - ESJ
     Logger gamelog;
@@ -49,20 +51,18 @@ int main(){
     sleep(1);
     autoplace(p2board);
 
-<<<<<<< HEAD
     do
     {
+        cout<<"Player 1 turn";
          attack(p2board,hitMap);
         displayboard(hitMap);
+         computerMove(p1board,hitMap2);
+         cout<<"Player 2 turn";
+         displayboard(hitMap2);
+
+
     }while(isWin(hitMap) ==0);
     
-=======
-    // why is this a fixed-duration loop? - ESJ
-    for(int i=1;i<10;i++){
-    attack(p2board,hitMap);
-    displayboard(hitMap);
-    }
->>>>>>> e5cffd983489cf375aaf271213921be2844f48a4
     // Unnecessary code?
     /*for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){

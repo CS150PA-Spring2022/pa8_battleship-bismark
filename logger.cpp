@@ -92,3 +92,4 @@ class Logger {
         fstream logFile;
         bool playerTurn;
 };
+
