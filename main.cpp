@@ -61,5 +61,9 @@ int main(){
     	}
     	cout << endl;
     }*/
+
+    // closes the game log when the game is over
+    gamelog.finish();
+
     return 0;
 }
