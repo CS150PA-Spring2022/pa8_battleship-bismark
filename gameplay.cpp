@@ -36,3 +36,28 @@ void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS])
        cout<<"invalid shot\n";
    }
 }
+
+bool isWin(char board[][NUM_COLS])
+{
+    int score=0;
+    for(int i=0;i<NUM_ROWS;i++)
+    {
+        for(int j=0;j<NUM_COLS;j++)
+        {
+            if(board[i][j]=='X')
+            {
+                score++;
+            }
+        }
+    }
+    if(score == 16)
+    {
+        cout<<"You win!";
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}

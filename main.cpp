@@ -38,10 +38,12 @@ int main(){
     sleep(1);
     autoplace(p2board);
 
-    for(int i=1;i<10;i++){
-    attack(p2board,hitMap);
-    displayboard(hitMap);
-    }
+    do
+    {
+         attack(p2board,hitMap);
+        displayboard(hitMap);
+    }while(isWin(hitMap) ==0);
+    
     // Unnecessary code?
     /*for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){

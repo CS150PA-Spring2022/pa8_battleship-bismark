@@ -44,6 +44,7 @@ bool validShot(int row,int col,char board[][NUM_COLS]);
 bool hitDetect(int row,int col,char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]);
 void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS]);
+bool isWin(char board[][NUM_COLS]);
 
 
 #ifdef TESTING
