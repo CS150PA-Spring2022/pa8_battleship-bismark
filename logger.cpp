@@ -19,6 +19,25 @@ class Logger {
     public:
         
         /**
+         * @brief Inserts a line to describe how the player's ships were placed.
+         * 
+         * @param auto If the player placed their ships automatically.
+         */
+        void shipsPlaced(bool auto) {
+            logFile << "Player's ships placed ";
+            if (auto)
+            {
+                logFile << "automatically.";
+            }
+            else
+            {
+                logFile << "manually.";
+            }
+            logFile << endl;
+            return;
+        }
+
+        /**
          * @brief Logs a shot.
          * 
          * @param row, col: row and column of the shot being logged
