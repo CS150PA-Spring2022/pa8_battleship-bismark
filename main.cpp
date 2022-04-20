@@ -7,6 +7,7 @@
  */
 
 #include "battleship.h"
+#include "logger.cpp"
 
 int main(){
 	welcomeScreen();
@@ -23,17 +24,27 @@ int main(){
     buildboard(p1board);
     buildboard(p2board);
     buildboard(hitMap);
+
+    //creates log after boards initialized - ESJ
+    Logger gamelog;
     
     char randPlace = '\0';
     cout << "Would you like to have your ships placed randomly? ";
     cin >> randPlace;
     // Ask if want random or manual placement.
-    if (checkYN(randPlace)){
+    
+    // needed to reference result twice, made storage variable - ESJ
+    bool autoChoice = checkYN(randPlace);
+
+    if (autoChoice){
     	autoplace(p1board);
     	displayboard(p1board);
     } else {
     	manualplace(p1board);
     }
+
+    //logs decision - ESJ
+    gamelog.shipsPlaced(autoChoice);
 
     sleep(1);
     autoplace(p2board);

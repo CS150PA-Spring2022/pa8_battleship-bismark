@@ -1,4 +1,6 @@
 #include "battleship.h"
+#include "logger.cpp"
+
 
 // Lance
 /**
@@ -8,11 +10,11 @@
  * @param hitMap		   Board that is displayed to player to be attacked
  */
 
-void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS])
+void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS], Logger &logFile)
 {
     char rowChar;
     int col;
-    cout<<"Enter the coordiantes of the space you would like to attack";
+    cout<<"Enter the coordinates of the space you would like to attack";
     cin>>rowChar;
         cin>>col;
 
@@ -25,10 +27,16 @@ void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS])
      {
          cout<<"Yarr you hit me ship";
          update(row-1,col-1,board,hitMap);
+
+         //logs hit - ESJ
+         logFile.addMove(row, col, true, board[row][col]);
      }
      else
      {
          cout<<"Haha you missed me boat";
+
+         //logs miss - ESJ
+         logFile.addMove(row, col, false, '-');
      }
    }
 
