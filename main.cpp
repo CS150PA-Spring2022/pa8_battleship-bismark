@@ -49,12 +49,20 @@ int main(){
     sleep(1);
     autoplace(p2board);
 
+<<<<<<< HEAD
     do
     {
          attack(p2board,hitMap);
         displayboard(hitMap);
     }while(isWin(hitMap) ==0);
     
+=======
+    // why is this a fixed-duration loop? - ESJ
+    for(int i=1;i<10;i++){
+    attack(p2board,hitMap);
+    displayboard(hitMap);
+    }
+>>>>>>> e5cffd983489cf375aaf271213921be2844f48a4
     // Unnecessary code?
     /*for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){
@@ -62,5 +70,9 @@ int main(){
     	}
     	cout << endl;
     }*/
+
+    // closes the game log when the game is over
+    gamelog.finish();
+
     return 0;
 }
