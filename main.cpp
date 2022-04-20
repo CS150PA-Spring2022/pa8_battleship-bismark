@@ -49,6 +49,7 @@ int main(){
     sleep(1);
     autoplace(p2board);
 
+    // why is this a fixed-duration loop? - ESJ
     for(int i=1;i<10;i++){
     attack(p2board,hitMap);
     displayboard(hitMap);
