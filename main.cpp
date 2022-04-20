@@ -10,6 +10,7 @@
 
 int main(){
 	welcomeScreen();
+	cin.get();
     // Initialize boards
     	// Extra board for computer to keep track of shots? Will update as needed... 
     	// Most likely needed. Not necessary segment, will call if needed.
@@ -18,44 +19,35 @@ int main(){
     // Game loop
     char p1board[NUM_ROWS][NUM_COLS];
     char p2board[NUM_ROWS][NUM_COLS];
+    char hitMap[NUM_ROWS][NUM_COLS];
     buildboard(p1board);
     buildboard(p2board);
+    buildboard(hitMap);
     
-    char randPlace = 'y';
-    
+    char randPlace = '\0';
+    cout << "Would you like to have your ships placed randomly? ";
+    cin >> randPlace;
     // Ask if want random or manual placement.
     if (checkYN(randPlace)){
     	autoplace(p1board);
+    	displayboard(p1board);
     } else {
     	manualplace(p1board);
     }
+
+    sleep(1);
     autoplace(p2board);
-    for (int i = 0; i < NUM_ROWS; i++){
+
+    for(int i=1;i<10;i++){
+    attack(p2board,hitMap);
+    displayboard(hitMap);
+    }
+    // Unnecessary code?
+    /*for (int i = 0; i < NUM_ROWS; i++){
     	for (int j = 0; j < NUM_COLS; j++){
     		cout << p1board[i][j];
     	}
     	cout << endl;
-    }
-
-    char yesno =' ';
-
-
-     do {
-        cout<<"Would you like to play a game of Battleship?";
-        cout<<"type 'y' if yes, 'n' if no ";
-        cin>>yesno;
-        
-        if(yesno=='y')
-        {
-            cout<<"Game in progress";
-        }
-
-    }while(yesno =='y');
-
-     cout<<"goodbye";
-
-
-
-
+    }*/
     return 0;
 }

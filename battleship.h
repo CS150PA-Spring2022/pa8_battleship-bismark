@@ -8,6 +8,12 @@
 #ifndef BATTLESHIP_H
 #define BATTLESHIP_H
 
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -27,20 +33,17 @@ const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
 
 // Declare functions
 void welcomeScreen();
-void computerMove(int thisMove[], int lastMove[], char history[][NUM_COLS], bool liveShips[], int lastHit[]);
-void checkSurrounding(int thisMove[], int lastMove[], char history[][NUM_COLS], int lastHit[], char target);
+void computerMove(void computerMove(char board[][NUM_COLS], int thisMove[]));
 void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
 bool checkYN(char input);
 void autoplace(char board[][NUM_COLS]);
 bool isSunk(char board[][NUM_COLS], char ship);
-
-
-
 bool validShot(int row,int col,char board[][NUM_COLS]);
 bool hitDetect(int row,int col,char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]);
+void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS]);
 
 
 #ifdef TESTING
