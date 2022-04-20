@@ -43,7 +43,7 @@ int main(){
     	manualplace(p1board);
     }
 
-    //logs decision
+    //logs decision - ESJ
     gamelog.shipsPlaced(autoChoice);
 
     sleep(1);
