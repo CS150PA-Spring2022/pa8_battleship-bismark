@@ -186,5 +186,5 @@ void autoplace(char board[][NUM_COLS]) {
 	}
 	cout << "Auto Initialization Complete.\n";
 	cout << "This is the Board:\n";
-	//displayboard(board);
+	displayboard(board);
 }

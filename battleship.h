@@ -43,6 +43,8 @@ bool isSunk(char board[][NUM_COLS], char ship);
 bool validShot(int row,int col,char board[][NUM_COLS]);
 bool hitDetect(int row,int col,char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]);
+void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS]);
+
 
 #ifdef TESTING
 //Temporarily initialized boards for playtesting until proper setup is configured.
