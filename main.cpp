@@ -51,17 +51,14 @@ int main(){
     sleep(1);
     autoplace(p2board);
 
-    do
-    {
-        cout<<"Player 1 turn";
-         attack(p2board,hitMap);
-        displayboard(hitMap);
-         computerMove(p1board,hitMap2);
-         cout<<"Player 2 turn";
-         displayboard(hitMap2);
-
-
-    }while(isWin(hitMap) ==0);
+    do {
+		cout << "Player 1 turn";
+		attack(p2board,hitMap);
+		displayboard(hitMap);
+		computerMove(p1board,hitMap2);
+		cout<<"Player 2 turn";
+		displayboard(hitMap2);
+	} while(isWin(hitMap) == 0);
     
     // Unnecessary code?
     /*for (int i = 0; i < NUM_ROWS; i++){
