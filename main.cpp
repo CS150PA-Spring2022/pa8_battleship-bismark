@@ -6,8 +6,7 @@
  * 
  */
 
-#include "battleship.h"
-#include "logger.cpp"
+#include "logger.h"
 
 int main(){
 	welcomeScreen();
@@ -52,25 +51,21 @@ int main(){
     sleep(1);
     autoplace(p2board);
     
-    if(selectWhoStartsFirst()){
-    do {
-		cout << "Player 1 turn";
-		attack(p2board,hitMap);
-		displayboard(hitMap);
-		cout<<"Player 2 turn";
-        computerMove(p1board,thisMove,hitMap2);
-        displayboard(hitMap2);    
+	if(selectWhoStartsFirst()){
+		do {
+			cout << "Player 1 turn";
+			attack(p2board,hitMap);
+			displayboard(hitMap);
+			cout << "Player 2 turn";
+			computerMove(p1board,thisMove,hitMap2);
+			displayboard(hitMap2);    
+		} while(isWin(hitMap) == 0);
 
-	} while(isWin(hitMap) == 0);
-
-    }
-
-    else
-    {
-        computerMove(p1board,thisMove,hitMap2);
+	} else {
+		computerMove(p1board,thisMove,hitMap2);
 
         //computer moves first
-    }
+	}
     
     // Unnecessary code?
     /*for (int i = 0; i < NUM_ROWS; i++){
@@ -81,7 +76,7 @@ int main(){
     }*/
 
     // closes the game log when the game is over
-    gamelog.finish();
+	gamelog.finish();
 
-    return 0;
+	return 0;
 }
