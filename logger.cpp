@@ -6,7 +6,7 @@
  * 
  */
 
-#include "battleship.h"
+#include "logger.h"
 
 /**
  * @brief A class-based logging system

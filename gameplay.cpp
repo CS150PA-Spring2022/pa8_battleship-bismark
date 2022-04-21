@@ -1,5 +1,5 @@
-#include "battleship.h"
-//#include "logger.cpp"
+//#include "battleship.h"
+#include "logger.h"
 
 
 // Lance

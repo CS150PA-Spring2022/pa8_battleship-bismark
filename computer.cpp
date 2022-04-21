@@ -6,7 +6,7 @@
  * 
  */
 
-#include "battleship.h"
+#include "logger.h"
 
 /**
  * @brief Handles computer player moves
