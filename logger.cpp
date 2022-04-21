@@ -8,7 +8,6 @@
 
 #include "battleship.h"
 #include <fstream>
-#include <time.h>
 using namespace std;
 
 /**
