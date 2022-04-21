@@ -51,15 +51,24 @@ int main(){
 
     sleep(1);
     autoplace(p2board);
-
+    
+    if(selectWhoStartsFirst() == 1){
     do {
 		cout << "Player 1 turn";
 		attack(p2board,hitMap);
 		displayboard(hitMap);
 		cout<<"Player 2 turn";
-        computerMove(p1board,hitMap2,)
-		displayboard(hitMap2);
+        computerMove(hitMap2,thisMove);
+         cout<<" enemy board";
+        displayboard(hitMap2);      
 	} while(isWin(hitMap) == 0);
+
+    }
+
+    else
+    {
+        //computer moves first
+    }
     
     // Unnecessary code?
     /*for (int i = 0; i < NUM_ROWS; i++){

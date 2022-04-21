@@ -46,6 +46,7 @@ void update(int row, int col, char board[][NUM_COLS], char hitMap[][NUM_COLS]);
 void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS]);
 bool isWin(char board[][NUM_COLS]);
 void computerMove(char board[][NUM_COLS], int thisMove[]);
+bool selectWhoStartsFirst();
 
 #ifdef TESTING
 //Temporarily initialized boards for playtesting until proper setup is configured.
