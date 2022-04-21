@@ -55,7 +55,6 @@ int main(){
 		cout << "Player 1 turn";
 		attack(p2board,hitMap);
 		displayboard(hitMap);
-		computerMove(p1board,hitMap2);
 		cout<<"Player 2 turn";
 		displayboard(hitMap2);
 	} while(isWin(hitMap) == 0);

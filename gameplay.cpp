@@ -22,13 +22,13 @@ void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS], Logger &logFile){
 
 	if (validShot(row-1,col-1,hitMap)){
 		if (hitDetect(row-1,col-1,board) == 1){
-			cout << "Yarr you hit me ship";
+			cout << "Yarr you hit me ship\n";
 			update(row-1,col-1,board,hitMap);
 
 			//logs hit - ESJ
 			logFile.addMove(row,col,true,board[row][col]);
 		} else {
-			cout<<"Haha you missed me boat";
+			cout<<"Haha you missed me boat\n";
 
 			//logs miss - ESJ
 			logFile.addMove(row,col,false,'-');
