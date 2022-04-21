@@ -51,6 +51,7 @@ void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]){
 	if (board[row][col] != '-'){
 		hitMap[row][col] = 'X';
 	} else {
+		
 		hitMap[row][col] = board[row][col];
 	}
 }

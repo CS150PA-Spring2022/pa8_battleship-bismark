@@ -53,19 +53,26 @@ int main(){
     
 	if(selectWhoStartsFirst()){
 		do {
-			cout << "Player 1 turn";
+			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
 			displayboard(hitMap);
-			cout << "Player 2 turn";
+			cout << "Player 2 turn\n";
 			computerMove(p1board,thisMove,hitMap2);
 			displayboard(hitMap2);    
 		} while(isWin(hitMap) == 0);
-	} else {
-		computerMove(p1board,thisMove,hitMap2);
+	} else
+     {
+        do{
+            cout << "Player 2 turn\n";
+		    computerMove(p1board,thisMove,hitMap2);
+            displayboard(hitMap2);
+            cout << "Player 1 turn\n";
+			attack(p2board,hitMap,gamelog);
+			displayboard(hitMap);
+        }while(isWin(hitMap2) == 0);
 
         //computer moves first
 	}
-
     // closes the game log when the game is over
 	gamelog.finish();
 
