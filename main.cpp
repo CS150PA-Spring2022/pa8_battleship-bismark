@@ -6,7 +6,7 @@
  * 
  */
 
-#include "logger.h"
+#include "battleship.h"
 
 int main(){
 	welcomeScreen();
@@ -54,26 +54,17 @@ int main(){
 	if(selectWhoStartsFirst()){
 		do {
 			cout << "Player 1 turn";
-			attack(p2board,hitMap);
+			attack(p2board,hitMap,gamelog);
 			displayboard(hitMap);
 			cout << "Player 2 turn";
 			computerMove(p1board,thisMove,hitMap2);
 			displayboard(hitMap2);    
 		} while(isWin(hitMap) == 0);
-
 	} else {
 		computerMove(p1board,thisMove,hitMap2);
 
         //computer moves first
 	}
-    
-    // Unnecessary code?
-    /*for (int i = 0; i < NUM_ROWS; i++){
-    	for (int j = 0; j < NUM_COLS; j++){
-    		cout << p1board[i][j];
-    	}
-    	cout << endl;
-    }*/
 
     // closes the game log when the game is over
 	gamelog.finish();

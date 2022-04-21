@@ -9,7 +9,7 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
-#include "battleship.h"
+#include "global.h"
 
 /**
  * @brief A class-based logging system

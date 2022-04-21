@@ -6,7 +6,7 @@
  * 
  */
 
-#include "logger.h"
+#include "battleship.h"
 
 
 /**

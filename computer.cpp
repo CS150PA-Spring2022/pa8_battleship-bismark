@@ -1,12 +1,12 @@
 /**
- * @file   battleship.cpp
+ * @file   computer.cpp
  * @author Kellen West
  * @brief  
  * @date   04-07-2022
  * 
  */
 
-#include "logger.h"
+#include "battleship.h"
 
 /**
  * @brief Handles computer player moves

@@ -1,5 +1,5 @@
 
-#include "logger.h"
+#include "battleship.h"
 
 
 
@@ -29,7 +29,7 @@ bool selectWhoStartsFirst()
  * @param hitMap		   Board that is displayed to player to be attacked
  */
 
-void attack(char board[][NUM_COLS],char hitMap[][NUM_COLS], Logger &logFile){
+void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile){
 	char rowChar = '\0';
 	int col = 0;
 	cout << "Enter the coordinates of the space you would like to attack";
