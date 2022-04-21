@@ -22,6 +22,7 @@ int main(){
     char p2board[NUM_ROWS][NUM_COLS];
     char hitMap[NUM_ROWS][NUM_COLS];
     char hitMap2[NUM_ROWS][NUM_COLS];
+    int thisMove[2];
     buildboard(p1board);
     buildboard(p2board);
     buildboard(hitMap);
@@ -56,6 +57,7 @@ int main(){
 		attack(p2board,hitMap);
 		displayboard(hitMap);
 		cout<<"Player 2 turn";
+        computerMove(p1board,hitMap2,)
 		displayboard(hitMap2);
 	} while(isWin(hitMap) == 0);
     

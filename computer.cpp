@@ -21,6 +21,7 @@ void computerMove(char board[][NUM_COLS], int thisMove[]){
 	do {
 		srand(time(NULL));
 		thisMove[0] = rand() % NUM_ROWS; // Random row
-		thisMove[1] = rand() % NUM_COLS; // Random column
+		thisMove[1] = rand() % NUM_COLS; 
+		         // Random column
 	} while (validShot(thisMove[0],thisMove[1],board));
 }
