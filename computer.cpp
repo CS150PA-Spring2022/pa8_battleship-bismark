@@ -18,8 +18,8 @@
  
 // NOTE: THIS CODE IS NOT FINAL. IT IS A PLACEHOLDER THAT MAKES RANDOM MOVES.
 void computerMove(char board[][NUM_COLS], int thisMove[]){
+	srand(time(NULL));
 	do {
-		srand(time(NULL));
 		thisMove[0] = rand() % NUM_ROWS; // Random row
 		thisMove[1] = rand() % NUM_COLS; 
 		         // Random column

@@ -18,11 +18,11 @@ void welcomeScreen(){
 	cout << "2. You are Player 1 and the computer is Player 2.\n";
 
 	cout << " Battleship is a game of naval warefare\n";
-	cout<<"1. Place your ships on the coordinate grid either horizontally or vertically and the AI player will do likewise";
-	cout<<endl;
-	cout<<"2. Each player will type in a captial letter and a number representing a space on the grid";
-	cout<<"3. If that space overlaps with a ship,you have hit that ship, when all spaces are hit that ship is sunk"<<endl;
-	cout<<"4. wWhen all ships have been sunk then either you or the opponent will win."<<endl;
+	cout << "1. Place your ships on the coordinate grid either horizontally or vertically and the AI player will do likewise";
+	cout << endl;
+	cout << "2. Each player will type in a captial letter and a number representing a space on the grid";
+	cout << "3. If that space overlaps with a ship,you have hit that ship, when all spaces are hit that ship is sunk" << endl;
+	cout << "4. When all ships have been sunk then either you or the opponent will win." << endl;
 	
 	cout << "Hit enter to start the game!\n";
 }
