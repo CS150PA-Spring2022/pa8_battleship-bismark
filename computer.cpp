@@ -17,11 +17,20 @@
  */
  
 // NOTE: THIS CODE IS NOT FINAL. IT IS A PLACEHOLDER THAT MAKES RANDOM MOVES.
-void computerMove(char board[][NUM_COLS], int thisMove[]){
+void computerMove(char board[][NUM_COLS], int thisMove[],char hitMap[][NUM_COLS]){
 	srand(time(NULL));
 	do {
 		thisMove[0] = rand() % NUM_ROWS; // Random row
 		thisMove[1] = rand() % NUM_COLS; 
 		         // Random column
-	} while (validShot(thisMove[0],thisMove[1],board));
+	} while (validShot(thisMove[0],thisMove[1],hitMap)); // The validshot function only looks - meaning that ships
+	// dont register as valid hits, so I am using hitmap which tracks succusful shots;
+
+	if(hitDetect(thisMove[0],thisMove[1],board))
+	{
+		update(thisMove[0],thisMove[1],board,hitMap);
+	};
+
+
 }
+

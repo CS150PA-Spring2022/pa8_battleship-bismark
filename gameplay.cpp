@@ -9,7 +9,15 @@ bool selectWhoStartsFirst()
 	char FirstPlayer='\0';
 	cout<<"Would you like to go first? enter Y(yes) or N(no)";
 	cin>>FirstPlayer;
-	checkYN(FirstPlayer);
+	if(checkYN(FirstPlayer))
+	{
+		return true;
+	}
+
+	else 
+	{
+		return false;
+	}
 }
 
 
