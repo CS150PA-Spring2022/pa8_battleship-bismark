@@ -60,16 +60,15 @@ int main(){
 			computerMove(p1board,thisMove,hitMap2);
 			displayboard(hitMap2);    
 		} while(isWin(hitMap) == 0);
-	} else
-     {
-        do{
-            cout << "Player 2 turn\n";
-		    computerMove(p1board,thisMove,hitMap2);
-            displayboard(hitMap2);
-            cout << "Player 1 turn\n";
+	} else {
+		do {
+			cout << "Player 2 turn\n";
+			computerMove(p1board,thisMove,hitMap2);
+			displayboard(hitMap2);
+			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
 			displayboard(hitMap);
-        }while(isWin(hitMap2) == 0);
+        } while(isWin(hitMap2) == 0);
 
         //computer moves first
 	}
