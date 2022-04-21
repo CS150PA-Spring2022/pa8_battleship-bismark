@@ -28,7 +28,7 @@ void buildboard(char board[][NUM_COLS]){
  * @param board 		  which board to display
  **/
 void displayboard(char board[][NUM_COLS]){
-	cout << "   ";
+	cout << "  ";
 	for (int head = 0; head < NUM_COLS; head++){
 		cout << head + 1 << " ";
 	}
