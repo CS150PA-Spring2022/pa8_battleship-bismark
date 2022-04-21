@@ -7,8 +7,8 @@
  */
 
 #include "battleship.h"
-#include <fstream>
-using namespace std;
+//#include <fstream>
+//using namespace std;
 
 /**
  * @brief A class-based logging system

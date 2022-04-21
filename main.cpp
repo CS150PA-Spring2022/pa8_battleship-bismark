@@ -7,7 +7,7 @@
  */
 
 #include "battleship.h"
-#include "logger.cpp"
+//#include "logger.cpp"
 
 int main(){
 	welcomeScreen();
@@ -56,7 +56,7 @@ int main(){
 		attack(p2board,hitMap);
 		displayboard(hitMap);
 		computerMove(p1board,hitMap2);
-		cout<<"Player 2 turn";
+		cout << "Player 2 turn";
 		displayboard(hitMap2);
 	} while(isWin(hitMap) == 0);
     
