@@ -17,12 +17,6 @@
 
 class Logger {
 	public:
-		void shipsPlaced(bool autoplace);
-
-		void addMove(int row, int col, bool hit, char mark);
-
-		void finish();
-
 		Logger() {
 			string fname;
 			time_t ref = time(NULL);
@@ -31,7 +25,9 @@ class Logger {
 			logFile << "Boards initialized at " << fname << "." << endl;
 			playerTurn = true;
 		};
-
+		void shipsPlaced(bool autoplace);
+		void addMove(int row, int col, bool hit, char mark);
+		void finish();
 	private:
 		fstream logFile;
 		bool playerTurn;

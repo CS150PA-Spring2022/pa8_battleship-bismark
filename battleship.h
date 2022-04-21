@@ -18,6 +18,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+#include "logger.h"
 using namespace std;
 
 //#define TESTING

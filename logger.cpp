@@ -7,8 +7,6 @@
  */
 
 #include "battleship.h"
-//#include <fstream>
-//using namespace std;
 
 /**
  * @brief A class-based logging system
@@ -22,7 +20,7 @@ class Logger {
          * 
          * @param auto If the player placed their ships automatically.
          */
-		void shipsPlaced(bool autoplace) {
+		void shipsPlaced(bool autoplace){
 			logFile << "Player's ships placed ";
 			if (autoplace){
 				logFile << "automatically.";
@@ -40,7 +38,7 @@ class Logger {
          * @param hit: if the shot being logged hit something
          * @param mark: the character that the shot resulted in.
          */
-		void addMove(int row, int col, bool hit, char mark) {
+		void addMove(int row, int col, bool hit, char mark){
 			char rowRef;
 			rowRef = 'A' + row;
             if (playerTurn){
@@ -59,7 +57,7 @@ class Logger {
 		};
 
         // closes file - MUST BE CALLED AT END OF MAIN
-		void finish() {
+		void finish(){
 			logFile.close();
 			return;
 		};
@@ -69,7 +67,7 @@ class Logger {
          * 
          * @details When creating the object, the filename will be the current time in seconds
          */
-		Logger() {
+		Logger(){
 			string fname;
 			time_t ref = time(NULL);
 			fname = ctime(&ref);
