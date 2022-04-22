@@ -57,13 +57,13 @@ int main(){
 			attack(p2board,hitMap,gamelog);
 			displayboard(hitMap);
 			cout << "Player 2 turn\n";
-			computerMove(p1board,thisMove,hitMap2);
+			computerMove(p1board,thisMove,hitMap2,gamelog);
 			displayboard(hitMap2);    
 		} while(isWin(hitMap) == 0 && isComputerWin(hitMap2) == 0);
 	} else {
 		do {
 			cout << "Player 2 turn\n";
-			computerMove(p1board,thisMove,hitMap2);
+			computerMove(p1board,thisMove,hitMap2,gamelog);
 			displayboard(hitMap2);
 			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
