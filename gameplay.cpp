@@ -48,7 +48,6 @@ void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile){
 			logFile.addMove(row,col,true,board[row][col]);
 		} else {
 			cout<<"Haha you missed me boat\n";
-
 			//logs miss - ESJ
 			logFile.addMove(row,col,false,'-');
 		}

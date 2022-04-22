@@ -55,18 +55,22 @@ int main(){
 		do {
 			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
+            cout<<"Enemy board"<<endl;
 			displayboard(hitMap);
 			cout << "Player 2 turn\n";
 			computerMove(p1board,thisMove,hitMap2,gamelog);
+            cout<<"Your board\n";
 			displayboard(hitMap2);    
 		} while(isWin(hitMap) == 0 && isComputerWin(hitMap2) == 0);
 	} else {
 		do {
 			cout << "Player 2 turn\n";
 			computerMove(p1board,thisMove,hitMap2,gamelog);
+            cout<<"Your board";
 			displayboard(hitMap2);
 			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
+            cout<<"Enemy board";
 			displayboard(hitMap);
         } while(isWin(hitMap2) == 0 && isComputerWin(hitMap2) == 0);
 
