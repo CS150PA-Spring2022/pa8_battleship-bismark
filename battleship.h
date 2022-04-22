@@ -23,7 +23,7 @@ bool hitDetect(int row,int col, char board[][NUM_COLS]);
 void update(int row, int col, char board[][NUM_COLS], char hitMap[][NUM_COLS]);
 void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile);
 bool isWin(char board[][NUM_COLS]);
-void computerMove(char board[][NUM_COLS], int thisMove[],char hitMap[][NUM_COLS]);
+void computerMove(char board[][NUM_COLS], int thisMove[],char hitMap[][NUM_COLS], Logger &logFile);
 bool selectWhoStartsFirst();
 
 #endif
