@@ -30,8 +30,8 @@ int main(){
     //creates log after boards initialized - ESJ
     Logger gamelog;
     
-    char randPlace = '\0';
-    cout << "Would you like to have your ships placed randomly? Enter y or n ";
+    string randPlace = "\0";
+    cout << "Would you like to have your ships placed randomly? [Y/N] ";
     cin >> randPlace;
     // Ask if want random or manual placement.
     
@@ -40,6 +40,7 @@ int main(){
 
     if (autoChoice){
     	autoplace(p1board);
+    	cout << "This is the Board:\n";
     	displayboard(p1board);
     } else {
     	manualplace(p1board);
@@ -59,20 +60,22 @@ int main(){
 			displayboard(hitMap);
 			cout << "Player 2 turn\n";
 			computerMove(p1board,thisMove,hitMap2,gamelog);
-            cout<<"Your board\n";
-			displayboard(hitMap2);    
-		} while(isWin(hitMap) == 0 && isComputerWin(hitMap2) == 0);
+            cout<<"Your board:\n";
+			//displayboard(hitMap2);
+			displayboard(p1board);
+		} while(!isWin(hitMap) && !isComputerWin(hitMap2));
 	} else {
 		do {
 			cout << "Player 2 turn\n";
 			computerMove(p1board,thisMove,hitMap2,gamelog);
-            cout<<"Your board";
-			displayboard(hitMap2);
+            cout << "Your board";
+			//displayboard(hitMap2);
+			displayboard(p1board);
 			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
-            cout<<"Enemy board";
+            cout << "Enemy board:";
 			displayboard(hitMap);
-        } while(isWin(hitMap2) == 0 && isComputerWin(hitMap2) == 0);
+        } while(!isWin(hitMap2) && !isComputerWin(hitMap2));
 
         //computer moves first
 	}

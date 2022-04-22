@@ -59,7 +59,7 @@ void manualplace(char board[][NUM_COLS]){
 			displayboard(board);
 			//Asks user for coordinates for ship
 			do {
-				cout << "Input Coordinates to begin placing " << SHIP_NAMES[shipnum] << " with length of " << SHIP_SIZES[shipnum] << ", seperated by a space: [ROW,COLUMN]\n";
+				cout << "Input coordinates to begin placing " << SHIP_NAMES[shipnum] << " with length of " << SHIP_SIZES[shipnum] << ", separated by a space: [ROW,COLUMN]\n";
 				cin >> placeXchar; //gets x coord (row)
 				placeX = placeXchar - 65;
 				cin >> placeY; //gets Y coord (col)
@@ -185,6 +185,6 @@ void autoplace(char board[][NUM_COLS]) {
 		}
 	}
 	cout << "Auto Initialization Complete.\n";
-	cout << "This is the Board:\n";
+	//cout << "This is the Board:\n";
 	//displayboard(board);
 }

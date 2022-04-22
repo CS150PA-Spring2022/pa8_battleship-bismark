@@ -16,11 +16,8 @@
  * @param board
  */
 bool validShot(int row,int col,char board[][NUM_COLS]){
-	if (board[row][col]=='-'){
-		return 1; // Suggest changing to explicit bools?
-	} else {
-	return 0;
-	}
+	if (board[row][col] == '-' && row >= 0 && row <= NUM_ROWS && col >= 0 && col <= NUM_COLS) return true; // Suggest changing to explicit bools?
+	else return false;
 }
 
 /**
@@ -32,11 +29,8 @@ bool validShot(int row,int col,char board[][NUM_COLS]){
  */
 bool hitDetect(int row,int col,char board[][NUM_COLS]){ // Possibly change to array method?
 	if (board[row][col] == 'd' || board[row][col] == 'c' || board[row][col] == 'r'
-       || board[row][col] == 'b' || board[row][col] == 's'){
-		return 1;
-	} else {
-		return 0;
-	}
+       || board[row][col] == 'b' || board[row][col] == 's') return true;
+	else return false;
 }
 
 /**
@@ -48,9 +42,11 @@ bool hitDetect(int row,int col,char board[][NUM_COLS]){ // Possibly change to ar
  * @param hitMap
  */
 void update(int row, int col, char board[][NUM_COLS],char hitMap[][NUM_COLS]){
-	if (board[row][col] != '-'){
+	if (board[row][col] == '-'){
 		hitMap[row][col] = 'X';
+		board[row][col] = 'X';
 	} else {
-		hitMap[row][col] = board[row][col];
+		hitMap[row][col] = toupper(board[row][col]);
+		board[row][col] = toupper(board[row][col]);
 	}
 }

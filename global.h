@@ -19,6 +19,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+#include <cstring>
+#include <cctype>
 using namespace std;
 
 //#define TESTING
@@ -26,7 +28,7 @@ using namespace std;
 // Global variables and arrays useful in the program
 const int NUM_ROWS = 10;  // number of rows of the battleship game board
 const int NUM_COLS = 10;  // number of columns of the battleship game board
-const int NUM_SHIPS = 5;  // number of ships in the battelship game
+const int NUM_SHIPS = 5;  // number of ships in the battleship game
 
 // Each of the ships information in 3 arrays (parallel arrays)
 const string SHIP_NAMES[] = {"carrier", "battleship", "cruiser", "submarine", "destroyer"};

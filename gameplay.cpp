@@ -4,20 +4,12 @@
 
 
 
-bool selectWhoStartsFirst()
-{
-	char FirstPlayer='\0';
-	cout<<"Would you like to go first? enter Y(yes) or N(no)";
-	cin>>FirstPlayer;
-	if(checkYN(FirstPlayer))
-	{
-		return true;
-	}
-
-	else 
-	{
-		return false;
-	}
+bool selectWhoStartsFirst(){
+	string FirstPlayer="\0";
+	cout << "Would you like to go first? [Y/N] ";
+	cin >> FirstPlayer;
+	if (checkYN(FirstPlayer)) return true;
+	else return false;
 }
 
 
@@ -30,13 +22,14 @@ bool selectWhoStartsFirst()
  */
 
 void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile){
+	inv:
 	char rowChar = '\0';
 	int col = 0;
-	cout << "Enter the coordinates of the space you would like to attack";
+	cout << "Enter the coordinates of the space you would like to attack: ";
 	cin >> rowChar;
 	cin >> col;
 
-	int row = rowChar-64;
+	int row = toupper(rowChar) - 64;
     
 
 	if (validShot(row-1,col-1,hitMap)){
@@ -47,12 +40,14 @@ void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile){
 			//logs hit - ESJ
 			logFile.addMove(row,col,true,board[row][col]);
 		} else {
-			cout<<"Haha you missed me boat\n";
+			cout << "Haha you missed me boat\n";
 			//logs miss - ESJ
+			update(row-1,col-1,board,hitMap);
 			logFile.addMove(row,col,false,'-');
 		}
 	} else {
-		cout << "invalid shot\n";
+		cout << "Invalid shot\n";
+		goto inv;
 	}
 }
 
@@ -75,9 +70,7 @@ bool isWin(char board[][NUM_COLS]){
 	if (score == 16){
 		cout << "You win!";
 		return true;
-	} else {
-		return false;
-	}
+	} else return false;
 }
 
 
@@ -93,8 +86,6 @@ bool isComputerWin(char board[][NUM_COLS]){
 	if (score == 16){
 		cout << "The Computer Wins!";
 		return true;
-	} else {
-		return false;
-	}
+	} else return false;
 }
 

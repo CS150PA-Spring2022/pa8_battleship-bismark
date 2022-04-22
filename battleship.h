@@ -15,7 +15,7 @@ void welcomeScreen();
 void buildboard(char board[][NUM_COLS]);
 void displayboard(char board[][NUM_COLS]);
 void manualplace(char board[][NUM_COLS]);
-bool checkYN(char input);
+bool checkYN(string input);
 void autoplace(char board[][NUM_COLS]);
 bool isSunk(char board[][NUM_COLS], char ship);
 bool validShot(int row,int col, char board[][NUM_COLS]);
