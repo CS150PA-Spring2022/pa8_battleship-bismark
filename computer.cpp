@@ -17,7 +17,7 @@
  */
  
 // NOTE: THIS CODE IS NOT FINAL. IT IS A PLACEHOLDER THAT MAKES RANDOM MOVES.
-void computerMove(char board[][NUM_COLS], int thisMove[],char hitMap[][NUM_COLS]){
+void computerMove(char board[][NUM_COLS], int thisMove[],char hitMap[][NUM_COLS], Logger &logFile){
 	srand(time(NULL));
 	do {
 		thisMove[0] = rand() % NUM_ROWS; // Random row
