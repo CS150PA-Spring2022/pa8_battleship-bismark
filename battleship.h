@@ -25,5 +25,5 @@ void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile);
 bool isWin(char board[][NUM_COLS]);
 void computerMove(char board[][NUM_COLS], int thisMove[],char hitMap[][NUM_COLS]);
 bool selectWhoStartsFirst();
-
+bool isComputerWin(char board[][NUM_COLS]);
 #endif

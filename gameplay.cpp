@@ -61,7 +61,7 @@ void attack(char board[][NUM_COLS], char hitMap[][NUM_COLS], Logger &logFile){
 /**
  * @brief              Checks to see if a player has won
  *
- * @param board		 	  the board this function is checkign for a winner
+ * @param board		 	  the board this function is checking for a winner
  */
 
 bool isWin(char board[][NUM_COLS]){
@@ -75,6 +75,24 @@ bool isWin(char board[][NUM_COLS]){
 	}
 	if (score == 16){
 		cout << "You win!";
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+bool isComputerWin(char board[][NUM_COLS]){
+	int score = 0;
+	for (int i = 0; i<NUM_ROWS; i++){
+		for (int j = 0; j<NUM_COLS; j++){
+			if (board[i][j] == 'X'){
+				score++;
+			}
+		}
+	}
+	if (score == 16){
+		cout << "The Computer Wins!";
 		return true;
 	} else {
 		return false;

@@ -31,7 +31,7 @@ int main(){
     Logger gamelog;
     
     char randPlace = '\0';
-    cout << "Would you like to have your ships placed randomly? ";
+    cout << "Would you like to have your ships placed randomly? Enter y or n ";
     cin >> randPlace;
     // Ask if want random or manual placement.
     
@@ -59,7 +59,7 @@ int main(){
 			cout << "Player 2 turn\n";
 			computerMove(p1board,thisMove,hitMap2);
 			displayboard(hitMap2);    
-		} while(isWin(hitMap) == 0);
+		} while(isWin(hitMap) == 0 && isComputerWin(hitMap2) == 0);
 	} else {
 		do {
 			cout << "Player 2 turn\n";
@@ -68,7 +68,7 @@ int main(){
 			cout << "Player 1 turn\n";
 			attack(p2board,hitMap,gamelog);
 			displayboard(hitMap);
-        } while(isWin(hitMap2) == 0);
+        } while(isWin(hitMap2) == 0 && isComputerWin(hitMap2) == 0);
 
         //computer moves first
 	}
